@@ -18,7 +18,7 @@ class Demo {
         currentJob.echo("Using maxParallelBranches : ${maxParallelBranches}")
         currentJob.echo("Using secondsToSleep : ${secondsToSleep}")
 
-        List<String> stages = (1 - totalBranches).collect { "Stage-${it}" as String }
+        List<String> stages = (1..totalBranches).collect { "Stage-${it}" as String }
 
         parallelLimitedBranches(currentJob, stages, maxParallelBranches, false) { String stageName ->
             currentJob.stage(stageName) {
