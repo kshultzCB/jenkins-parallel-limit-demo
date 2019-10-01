@@ -23,6 +23,9 @@ pipeline {
             description: "The amount of time to sleep in branch/stage to simulate work."
         )
     }
+    agent {
+        label 'prod'
+    }
     stages {
         stage("RunParallel") {
             steps {
